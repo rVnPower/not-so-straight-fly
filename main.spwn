@@ -3,34 +3,64 @@ let a = 0;
 
 // Đổi số 2400 để chall dài hay ngắn hơn (nên chia hết cho 30 để đẹp)
 
-for i in 105..30..2400 {
-    a += 1
-    $.add(obj {
-        OBJ_ID: 1,
-        X: i, Y: 15 + a
-    })
-    $.add(obj {
-        OBJ_ID: 1,
-        X: i, Y: 135 + a
-    })
-    $.add(obj {
-        OBJ_ID: 8,
-        X: i, Y: 45 + a
-    })
-    $.add(obj {
-        OBJ_ID: 8,
-        X: i, Y: 105 + a
-    })
-    if (i + 5) % 40 == 0 {
+for i in 105..30..4800 {
+    if i <= 2400 {
+        a += 1
         $.add(obj {
-        OBJ_ID: 36,
-        X: i, Y: 75 + a
-    })
+            OBJ_ID: 1,
+            X: i, Y: 15 + a
+        })
+        $.add(obj {
+            OBJ_ID: 1,
+            X: i, Y: 135 + a
+        })
+        $.add(obj {
+            OBJ_ID: 8,
+            X: i, Y: 45 + a
+        })
+        $.add(obj {
+            OBJ_ID: 8,
+            X: i, Y: 105 + a,
+            ROTATION: 180
+        })
+        if (i + 5) % 40 == 0 {
+            $.add(obj {
+            OBJ_ID: 36,
+            X: i, Y: 75 + a
+        })}
+
+    } else {
+        a -= 1
+        $.add(obj {
+            OBJ_ID: 1,
+            X: i, Y: 15 + a
+        })
+        $.add(obj {
+            OBJ_ID: 1,
+            X: i, Y: 135 + a
+        })
+        $.add(obj {
+            OBJ_ID: 8,
+            X: i, Y: 45 + a
+        })
+        $.add(obj {
+            OBJ_ID: 8,
+            X: i, Y: 105 + a,
+            ROTATION: 180
+        })
+        if (i + 5) % 40 == 0 {
+            $.add(obj {
+            OBJ_ID: 36,
+            X: i, Y: 75 + a
+        })}
     }
 }
+$.add(obj {
+    OBJ_ID: 12,
+    X: i, Y: 30
+})
 
 $.add(obj {
     OBJ_ID: 140,
     X: 15, Y: 5
 })
-
